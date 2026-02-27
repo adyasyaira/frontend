@@ -1,0 +1,10 @@
+@tailwind base;
+
+body {
+  @apply text-gray-800 min-h-screen;
+}
+
+@tailwind components;
+@tailwind utilities;
+
+
