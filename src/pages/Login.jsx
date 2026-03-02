@@ -67,6 +67,11 @@ export default function Login() {
       navigate("/", {
         state: { fromLogin: true },
       });
+      localStorage.setItem(
+        "user_permissions",
+        JSON.stringify(res.data.permissions || [])
+      );
+        
     } catch {
       toast.dismiss(loading);
       toast.error("Email atau password salah!");
@@ -111,7 +116,7 @@ export default function Login() {
             type="checkbox"
             id="rememberMe"
             checked={rememberMe}
-            className="mr-2 w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 rounded-2xl"
+            className="mr-2 w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-[4px] focus:ring-blue-500"
             onChange={(e) => setRememberMe(e.target.checked)}
           />
           <label htmlFor="rememberMe" className="text-sm text-gray-600">
